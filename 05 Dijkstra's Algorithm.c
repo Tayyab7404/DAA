@@ -2,11 +2,11 @@
 
 #define INF 999999
 
-void Dijkstra(int cost[7][7], int *dist, int v, int n);
+void Dijkstra(int cost[7][7], int dist[], int v, int n);
 
 int main() 
 {
-    int cost[7][7] = {{0, 0, 0, 0, 0, 0},
+    int cost[7][7] = {{0, 0, 0, 0, 0, 0, 0},
                       {0, 0, 2, 4, INF, INF, INF},
                       {0, INF, 0, 1, 7, INF, INF},
                       {0, INF, INF, 0, INF, 3, INF},
@@ -31,7 +31,7 @@ int main()
     return 0;
 }
 
-void Dijkstra(int cost[7][7], int *dist, int v, int n) 
+void Dijkstra(int cost[7][7], int dist[], int v, int n) 
 {
     int S[n+1];
     dist[0] = INF;
@@ -48,7 +48,7 @@ void Dijkstra(int cost[7][7], int *dist, int v, int n)
     for (int num=2; num<n; num++) 
     {
         int u = 0;
-        for (int i = 1; i <= n; i++)
+        for (int i=1; i<=n; i++)
             if (dist[u]>dist[i] && i!=v && S[i]==0)
                 u = i;
     
