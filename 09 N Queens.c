@@ -26,7 +26,7 @@ void NQueens(int x[], int k, int n)
             x[k] = i;
             if (k == n)
             {
-                for (int p = 1; p <= n; p++)
+                for (int p=1; p<=n; p++)
                     printf("%d ", x[p]);
                 printf("\n");
             }
