@@ -50,14 +50,14 @@ int* ComputeLPS(char *s, int n)
     int *lps = (int*)malloc(n * sizeof(int));
     lps[0] = 0;
 
-    for (int i = 1; i < n; i++)
+    for (int i=1; i<n; i++)
         lps[i] = 0;
 
-    for (int i = 1; i < n; i++)
+    for (int i=1; i<n; i++)
     {
         int j = lps[i-1];
 
-        while (j > 0 && s[i] != s[j])
+        while (j>0 && s[i]!=s[j])
             j = lps[j-1];
 
         if (s[i] == s[j])
