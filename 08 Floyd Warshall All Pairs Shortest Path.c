@@ -11,8 +11,8 @@ int main()
     printf("Enter the number of vertices: ");
     scanf("%d", &n);
   
-    int **graph = (int **)malloc((n+1) * sizeof(int *));
-    graph[0] = (int *)malloc((n+1) * sizeof(int));
+    int **graph = (int**)malloc((n+1) * sizeof(int*));
+    graph[0] = (int*)malloc((n+1) * sizeof(int));
     
     for (int i=0; i<=n; i++)
         graph[0][i] = 0;
@@ -61,9 +61,9 @@ int main()
 
 void FloydWarshall(int **graph, int n) 
 {
-    for (int k = 1; k <= n; k++) 
-        for (int i = 1; i <= n; i++) 
-            for (int j = 1; j <= n; j++) 
-                if ((graph[i][k]+graph[k][j]) < graph[i][j] && (graph[i][k]!=INT_MAX && graph[k][j]!=INT_MAX))
+    for (int k=1; k<=n; k++) 
+        for (int i=1; i<=n; i++) 
+            for (int j=1; j<=n; j++) 
+                if ((graph[i][k]+graph[k][j]) < graph[i][j] && (graph[i][k] != INT_MAX && graph[k][j] != INT_MAX))
                     graph[i][j] = graph[i][k] + graph[k][j];
 }
