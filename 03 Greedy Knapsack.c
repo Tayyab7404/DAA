@@ -18,7 +18,7 @@ int main()
     float r[n];
 
     printf("Enter profits and weights of each item: \n");
-    for (int i = 0; i < n; i++)
+    for (int i=0; i<n; i++)
     {
         printf("\tItem %d: ", i+1);
         scanf("%d %d", &p[i], &w[i]);
@@ -34,7 +34,7 @@ int main()
 
 void MergeSort(float r[],int p[], int w[], int l, int h)
 {
-    if (l < h)
+    if (l<h)
     {
         int m = (l+h) / 2;
 
@@ -54,7 +54,7 @@ void Merge(float r[], int p[], int w[], int l, int m, int h)
     float temp1[h+1];
     int temp2[h+1], temp3[h+1];
 
-    while (i <= m && j <= h)
+    while (i<=m && j<=h)
     {
         if (r[i] >= r[j])
         {
@@ -93,7 +93,7 @@ void Merge(float r[], int p[], int w[], int l, int m, int h)
 void Greedy(float r[], int p[], int w[], int m, int n)
 {
     float x[n];
-    for (int i=0; i < n; i++)
+    for (int i=0; i<n; i++)
         x[i] = 0.0;
 
     float tProfit = 0.0;
@@ -117,7 +117,7 @@ void Greedy(float r[], int p[], int w[], int m, int n)
     printf("Total profit= %.2f \nCapacity filled = %d\n", tProfit, m-curr);
 
     printf("Selected items are: \n");
-    for (int i = 0; i < n; ++i)
+    for (int i=0; i<n; i++)
     {
         if (x[i] == 0.0) continue;
         printf("Item %d: Fraction = %.2f, Profit = %d, Weight = %d\n", i, x[i], p[i], w[i]);
