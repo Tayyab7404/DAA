@@ -45,12 +45,12 @@ int Prims(int cost[8][8], int n)
 
     near[minEdge[0]] = near[minEdge[1]] = 0;
 
-    for (int i = 2; i <= n-1; i++) 
+    for (int i=2; i<=n-1; i++) 
     {
         int j = 0;
         int minJ = INF;
 
-        for (int x = 1; x <= n; x++) 
+        for (int x=1; x<=n; x++) 
         {
             if (near[x]!=0 && cost[x][near[x]]<minJ) 
             {
@@ -64,7 +64,7 @@ int Prims(int cost[8][8], int n)
         minCost += cost[j][near[j]];
         near[j] = 0;
 
-        for (int k = 1; k <= n; k++) 
+        for (int k=1; k<=n; k++) 
         {
             if ((near[k] != 0) && (cost[k][near[k]] > cost[k][j]))
                 near[k] = j;
