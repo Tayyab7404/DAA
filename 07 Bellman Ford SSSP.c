@@ -38,8 +38,8 @@ int* BellmanFord(int graph[][10], int v, int n)
         dist[i] = graph[v][i];
 
     for (int k=2; k<=n-1; k++)
-        for (int i = 1; i <= n; i++)
-            for (int u = 1; u <= n; u++)
+        for (int i=1; i<=n; i++)
+            for (int u=1; u<=n; u++)
                 if ((u!=i && u!=v && graph[i][u]!=__INT_MAX__) && (dist[u] > dist[i]+graph[i][u]))
                     dist[u] = dist[i] + graph[i][u];
   
