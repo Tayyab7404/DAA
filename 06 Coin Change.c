@@ -35,7 +35,7 @@ int CoinChange(int coins[], int n, int amount)
     for (int i=1; i<=amount; i++)
         for (int coin=0; coin<n; coin++)
             if (coins[coin] <= i)
-                dp[i] = (1 + dp[i - coins[coin]]) < dp[i] ? (1 + dp[i - coins[coin]]) : dp[i];
+                dp[i] = (1+dp[i-coins[coin]]) < dp[i] ? (1+dp[i-coins[coin]]) : dp[i];
 
     return dp[amount];
 }
