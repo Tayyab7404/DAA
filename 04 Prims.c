@@ -27,7 +27,7 @@ int main()
 int Prims(int graph[n+1][n+1])
 {
     int MinEdge[2];
-    int MinCost = LeastCostEdge(cost MinEdge);
+    int MinCost = LeastCostEdge(graph, MinEdge);
 
     
 
