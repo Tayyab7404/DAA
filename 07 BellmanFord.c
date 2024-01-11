@@ -38,7 +38,7 @@ int* BellmanFord(int graph[n+1][n+1], int v)
     for(int i=1; i<=n; i++)
         dist[i] = graph[v][i];
 
-    for(int k=2; k<=n-1; k++)
+    for(int k=1; k<n-1; k++) // The loop has to run n-1 times if there are n nodes in the graph.
         for(int i=1; i<=n; i++)
             for(int u=1; u<=n; u++)
                 if((u != i && u != v && graph[i][u] != INF) && (dist[u] > dist[i] + graph[i][u]))
