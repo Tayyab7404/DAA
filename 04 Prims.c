@@ -1,40 +1,40 @@
 #include<stdio.h>
 
 #define INF 99999
+#define n 7
 
-int Prims(int cost[][], int n);
-int LeastCostEdge(int cost[][], int n, int MinEdge[]);
+int Prims(int graph[n+1][n+1]);
+int LeastCostEdge(int graph[n+1][n+1], int MinEdge[]);
 
 int main()
 {
-    int n=8;
-    int cost[n][n] = {{0, 0,   0,   0,   0,   0,   0,   0},
-                      {0, 0,   28,  INF, INF, INF, 10,  INF},
-                      {0, 28,  0,   16,  INF, INF, INF, 14},
-                      {0, INF, 16,  0,   12,  INF, INF, INF},
-                      {0, INF, INF, 12,  0,   22,  INF, 18},
-                      {0, INF, INF, INF, 22,  0,   25,  24},
-                      {0, 10,  INF, INF, INF, 25,  0,   INF},
-                      {0, INF, 14,  INF, 18,  24,  INF, 0}};
+    int graph[n+1][n+1] = {{0, 0,   0,   0,   0,   0,   0,   0},
+                          {0, 0,   28,  INF, INF, INF, 10,  INF},
+                          {0, 28,  0,   16,  INF, INF, INF, 14},
+                          {0, INF, 16,  0,   12,  INF, INF, INF},
+                          {0, INF, INF, 12,  0,   22,  INF, 18},
+                          {0, INF, INF, INF, 22,  0,   25,  24},
+                          {0, 10,  INF, INF, INF, 25,  0,   INF},
+                          {0, INF, 14,  INF, 18,  24,  INF, 0}};
 
-    int MinCostTree = Prims(cost, n);
+    int MinCostTree = Prims(graph);
 
     printf("The cost of the minimum spanning tree is: %d", MinCostTree);
 
     return 0;
 }
 
-int Prims(int cost[][], int n)
+int Prims(int graph[n+1][n+1])
 {
     int MinEdge[2];
-    int MinCost = LeastCostEdge(cost, n, MinEdge);
+    int MinCost = LeastCostEdge(cost MinEdge);
 
     
 
     return 0;   
 }
 
-int LeastCostEdge(int cost[][], int n, int MinEdge[])
+int LeastCostEdge(int graph[n+1][n+1] int MinEdge[])
 {
     int min = INF;
 
@@ -42,9 +42,9 @@ int LeastCostEdge(int cost[][], int n, int MinEdge[])
     {
         for(int j=1; j<=n; j++)
         {
-            if(cost[i][j] != 0 && cost[i][j] < min)
+            if(graph[i][j] != 0 && graph[i][j] < min)
             {
-                min = cost[i][j];
+                min = graph[i][j];
                 MinEdge[0] = i;
                 MinEdge[1] = j;
             }
