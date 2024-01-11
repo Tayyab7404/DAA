@@ -4,7 +4,7 @@
 #define n 7
 
 int Prims(int graph[n+1][n+1]);
-int LeastCostEdge(int graph[n+1][n+1], int MinEdge[]);
+int LeastCostEdge(int graph[n+1][n+1], int MinEdge[2]);
 
 int main()
 {
@@ -34,7 +34,7 @@ int Prims(int graph[n+1][n+1])
     return 0;   
 }
 
-int LeastCostEdge(int graph[n+1][n+1] int MinEdge[])
+int LeastCostEdge(int graph[n+1][n+1] int MinEdge[2])
 {
     int min = INF;
 
